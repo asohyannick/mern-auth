@@ -2,6 +2,7 @@ import dotenv from 'dotenv';
 import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
+import cookieParser from 'cookie-parser';
 dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 8000;
@@ -9,6 +10,7 @@ const PORT = process.env.PORT || 8000;
 app.use(cors());
 // middleware packages
 app.use(express.json());
+app.use(cookieParser());
 // routes
 app.get('/test',(req, res) => {
     res.send('<h1>API is working successfully<h1>')
