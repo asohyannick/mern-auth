@@ -1,5 +1,6 @@
 import User from '../models/user.model.js';
 import { StatusCodes } from 'http-status-codes';
+import { errorHandler } from '../utils/error.js';
 import bcyptjs from 'bcryptjs';
 export const signup = async (req, res, next) => {
     const {username, email, password} = req.body;
@@ -9,6 +10,6 @@ export const signup = async (req, res, next) => {
         await newUser.save();
         res.status(StatusCodes.OK).json('User created successfully')
     } catch(error) {
-        res.status(500).json(error.message);
+        next(error);
     }
 }
