@@ -3,6 +3,7 @@ import { StatusCodes } from "http-status-codes";
 import { errorHandler } from "../utils/error.js";
 import jwt from "jsonwebtoken";
 import bcryptjs from "bcryptjs";
+
 export const signup = async (req, res, next) => {
   const { username, email, password } = req.body;
   const hashedPassword = bcryptjs.hashSync(password, 10);
