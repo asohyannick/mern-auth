@@ -23,7 +23,7 @@ const SignUp = () => {
       console.log(data);
       setLoading(false);
       if (data.success === false) {
-        setError(false);
+        setError(true);
         return;
       }
       navigate("/sign-in");
@@ -68,7 +68,7 @@ const SignUp = () => {
       <div className="flex gap-2 mt-5">
         <p>Have an account?</p>
         <Link to="/sign-in">
-          <span className="text-blue-500">Sing In</span>
+          <span className="text-blue-500">Sign In</span>
         </Link>
       </div>
       <p className="text-red-500 mt-5">{error && "Something went wrong!"}</p>

@@ -13,6 +13,7 @@ function App() {
         <Route element={<PrivateRoute />}>
           <Route path="/profile" element={<Profile />} />
         </Route>
+        {/* <Route path="/profile" element={<Profile />} /> */}
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </BrowserRouter>
