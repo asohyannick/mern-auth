@@ -8,3 +8,17 @@
     box-sizing: border-box;
 }
 
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 300;
+    border-top: 1px solid gray;
+    padding-top: 50px;
+   margin: 15px;
+}
+
+@media(max-width:1200px) {
+    .footer-container {
+        flex-wrap: wrap;
+    }
+}
